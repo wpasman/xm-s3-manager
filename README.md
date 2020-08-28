@@ -2,9 +2,11 @@
 xm-s3-manager for Bloomreach Experience Manager (brXM) provides out of the box and deep integrations of S3 storage into your brXM project.
 
 The S3 asset manager allows for :
-- uploading and storage of any digital asset onto S3 (from withing the brXM UI)
-- linking, picking, searching and referencing digital asset stored onto S3
-- the Asset Manager provides both a ckeditor plugin for usage in Rich Text Fields and provides a compound type to be used in your document types.
+- Uploading and storage of any digital asset onto S3 (from within the brXM UI);
+- Linking, picking, searching and referencing digital assets stored onto S3;
+- The Asset Manager provides both a ckeditor plugin for usage in Rich Text Fields and provides a compound type to be used in your document types;
+- S3 Asset Manager specific User roles to manage permissions for Admin, Upload, Create and Delete;
+
 
 ## Installation
 
