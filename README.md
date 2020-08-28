@@ -1,3 +1,11 @@
+## Introduction
+xm-s3-manager for Bloomreach Experience Manager (brXM) provides out of the box and deep integrations of S3 storage into your brXM project.
+
+The S3 asset manager allows for :
+- uploading and storage of any digital asset onto S3 (from withing the brXM UI)
+- linking, picking, searching and referencing digital asset stored onto S3
+- the Asset Manager provides both a ckeditor plugin for usage in Rich Text Fields and provides a compound type to be used in your document types.
+
 ## Installation
 
 - In the root pom.xml configure in the properties a version for the plugin, make sure to include the required repository in the repositories section and add the bellow dependency both in the dependencyManagement and dependencies section
@@ -19,33 +27,33 @@
     <dependencyManagement>
         <dependencies>
           <!--SNIP-->
-          
+
           <dependency>
             <groupId>com.bloomreach.xm.manager</groupId>
             <artifactId>brxm-s3-manager-common</artifactId>
             <version>${brxm.s3.manager.version}</version>
             <scope>provided</scope>
           </dependency>
-          
+
           <!--SNIP-->
         </dependencies>
     </dependencyManagement>
-    
+
     <dependencies>
         <!--SNIP-->
-    
+
         <dependency>
           <groupId>com.bloomreach.xm.manager</groupId>
           <artifactId>brxm-s3-manager-common</artifactId>
           <version>${brxm.s3.manager.version}</version>
           <scope>provided</scope>
         </dependency>
-    
+
         <!--SNIP-->
     </dependencies>
 ```
 
-- In the root pom.xml under the profile cargo run and in the 
+- In the root pom.xml under the profile cargo run and in the
 ```xml
     <build>
         <plugins>
@@ -58,13 +66,13 @@
                         <!--SNIP-->
                         <dependencies>
                           <!--SNIP-->
-                    
+
                           <dependency>
                             <groupId>com.bloomreach.xm.manager</groupId>
                             <artifactId>brxm-s3-manager-common</artifactId>
                             <classpath>shared</classpath>
                           </dependency>
-                    
+
                           <!--SNIP-->
                         </dependencies>
                     </container>
@@ -133,7 +141,7 @@
 The configuration of the S3 manager daemon module can be accessed and modified from the Console under `/hippo:configuration/hippo:modules/s3manager`
 
 ---
-> **Note :** The daemon module can be reconfigured while the application is running.The changes will be picked up without the need to restart it. **However, all uploads in progress will be aborted.** 
+> **Note :** The daemon module can be reconfigured while the application is running.The changes will be picked up without the need to restart it. **However, all uploads in progress will be aborted.**
 ---
 
 | property | type| default value | required| description | notes |
@@ -159,7 +167,7 @@ The plugin provides 4 different user roles.
 |xm.s3manager-create.user| Role that grants the create folder right. |
 |xm.s3manager-upload.user| Role that grants the upload files to S3 right. |
 |xm.s3manager-delete.user| Role that grants delete rights on any folder/asset. |
---- 
+---
 ### (Optional) Add CKEditor S3 Manager button
 
 If you are editing directly a yaml file, configure the below property on the /cluster.options: node of an RTF field in a document type of your project or on global level `/hippo:namespaces/system/Html/editor:templates/_default_`
